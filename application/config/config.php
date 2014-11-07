@@ -14,8 +14,8 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://conta.dev';
-//$config['base_url']	= 'http://conta.yacaya.com';
+//$config['base_url']	= 'http://conta.dev';
+$config['base_url']	= 'http://conta.yacaya.com';
 /*
 |--------------------------------------------------------------------------
 | Index File
