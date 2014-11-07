@@ -56,16 +56,25 @@
 
             <div class="col-md-5">
 
-                <form method="post" action="http://themepixels.com/demo/webpage/bracket/index.html">
+                <?= form_open(''); ?>
                     <h4 class="nomargin">Login</h4>
                     <p class="mt5 mb20">Entra a tu cuenta</p>
-
-                    <input type="text" class="form-control uname" placeholder="Usuario" />
-                    <input type="password" class="form-control pword" placeholder="Clave" />
+                    <?php
+                        if($this->session->flashdata('error')){
+                    ?>
+                    <div class="alert alert-danger">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <strong>ERROR! </strong> <?= $this->session->flashdata('error'); ?>
+                    </div>
+                    <?php
+                        }
+                    ?>
+                    <input type="text" class="form-control uname" name="user" placeholder="Usuario" />
+                    <input type="password" class="form-control pword" name="pass" placeholder="Clave" />
                     <a href="#"><small>No recuerdas tu clave?</small></a>
-                    <button class="btn btn-success btn-block">Entrar</button>
+                    <button type="submit" name="entrar" class="btn btn-success btn-block">Entrar</button>
 
-                </form>
+                <?= form_close(); ?>
             </div><!-- col-sm-5 -->
 
         </div><!-- row -->

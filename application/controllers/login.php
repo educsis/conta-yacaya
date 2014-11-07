@@ -5,6 +5,25 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+        if ($this->ion_auth->logged_in()){
+            redirect(base_url('admin'));
+		}
+
+        if(isset($_POST['entrar'])){
+
+            $identity = $_POST['user'];
+            $password = $_POST['pass'];;
+            $remember = TRUE; // remember the user
+            $check = $this->ion_auth->login($identity, $password, $remember);
+
+            if($check){
+                redirect(base_url('admin'));
+            }else{
+                $this->session->set_flashdata('error', 'Credenciales incorrectas');
+                redirect(base_url());
+            }
+        }
+
         $data = array(
             'datos' =>  ''
         );
@@ -12,5 +31,3 @@ class Login extends CI_Controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

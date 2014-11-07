@@ -14,8 +14,8 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://conta.yacaya.com';
-
+$config['base_url']	= 'http://conta.dev';
+//$config['base_url']	= 'http://conta.yacaya.com';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'ssjdj4338djdj3838jejsdwiwu4333487h8wefh873r48hkjhkjh32jh4ghd';
 
 /*
 |--------------------------------------------------------------------------
